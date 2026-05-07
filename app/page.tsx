@@ -1,21 +1,28 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-100 font-sans">
+    <main
+      className="relative min-h-screen bg-white text-slate-950 font-sans"
+      style={{
+        backgroundImage: "url('/images/Background.jpeg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
       <div className="mx-auto max-w-7xl px-6 py-10 sm:px-8 lg:px-12">
-        <header className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-10 shadow-2xl shadow-emerald-950/20 backdrop-blur-xl">
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/5 via-transparent to-cyan-600/5 pointer-events-none"></div>
-          <div className="relative grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-            <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2">
+        <header className="relative overflow-hidden rounded-[2rem] border border-slate-200/70 bg-white/95 p-10 shadow-2xl shadow-slate-950/10 backdrop-blur-xl">
+          <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/70 to-slate-100/80 pointer-events-none"></div>
+          <div className="relative grid gap-10 lg:grid-cols-[1.2fr_0.9fr] lg:items-center">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-300/40 bg-emerald-100/70 px-4 py-2">
                 <span className="inline-block h-2 w-2 rounded-full bg-emerald-400"></span>
-                <p className="text-xs uppercase tracking-[0.25em] text-emerald-300 font-medium">Virtual Reality Leader</p>
+                <p className="text-xs uppercase tracking-[0.25em] text-emerald-600 font-medium">Virtual Reality Leader</p>
               </div>
               <div className="space-y-4">
-                <h1 className="text-5xl sm:text-6xl font-bold leading-tight tracking-tight text-white">
-                  Manasik Haji Lebih <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Nyata</span>
+                <h1 className="text-5xl sm:text-6xl font-bold leading-tight tracking-tight text-slate-950">
+                  Manasik Haji Lebih <span className="bg-gradient-to-r from-emerald-500 to-cyan-500 bg-clip-text text-transparent">Nyata</span>
                 </h1>
               </div>
-              <p className="max-w-2xl text-lg leading-8 text-slate-300">
+              <p className="max-w-2xl text-lg leading-8 text-slate-700 sm:text-xl">
                 Solusi manasik haji premium untuk travel umrah dan jamaah individu — pengalaman VR 360° imersif yang menjadikan pembelajaran ibadah lebih jelas, terstruktur, dan profesional.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row pt-2">
@@ -23,7 +30,7 @@ export default function Home() {
                   href="https://wa.me/6281379389964"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 px-8 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/20 transition hover:shadow-emerald-500/40 hover:from-emerald-300 hover:to-emerald-400"
+                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition hover:shadow-emerald-500/30"
                 >
                   Konsultasi WhatsApp
                 </a>
@@ -31,41 +38,26 @@ export default function Home() {
                   href="https://forms.gle/LS78LwNGtJcVHPsPA"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 py-3 text-sm font-semibold text-white backdrop-blur transition hover:border-white/40 hover:bg-white/10"
+                  className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-slate-950 px-8 py-3 text-sm font-semibold text-white transition hover:border-slate-400 hover:bg-slate-900"
                 >
                   Isi Data Sekarang
                 </a>
               </div>
             </div>
-            <div className="rounded-[1.5rem] border border-white/10 bg-gradient-to-br from-slate-800/80 to-slate-900/80 p-8 shadow-xl shadow-slate-950/40 backdrop-blur">
-              <div className="flex items-center gap-2 mb-6">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-cyan-400"></span>
-                <p className="text-xs uppercase tracking-[0.25em] text-slate-400 font-medium">Keunggulan Kami</p>
-              </div>
-              <div className="space-y-5">
-                <div className="rounded-2xl bg-gradient-to-br from-emerald-500/10 to-emerald-600/5 border border-emerald-500/20 p-5">
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 mt-1">
-                      <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-emerald-500/20">
-                        <span className="text-emerald-400 text-xs font-bold">✓</span>
-                      </div>
+            <div className="relative rounded-[1.5rem] overflow-hidden border border-slate-200/80 bg-slate-100 shadow-xl shadow-slate-950/10">
+              <div className="relative h-[28rem] sm:h-[30rem] lg:h-[34rem]">
+                <img src="/images/VR.png" alt="Virtual Haramain VR" className="h-full w-full object-cover object-center" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
+                <div className="absolute left-6 bottom-6 right-6 rounded-3xl border border-white/80 bg-white/90 p-6 backdrop-blur-md shadow-2xl shadow-slate-950/10">
+                  <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Keunggulan Kami</p>
+                  <div className="mt-5 space-y-4 text-slate-700">
+                    <div className="rounded-2xl bg-slate-100/90 p-4">
+                      <p className="font-semibold">Efisiensi Pelatihan</p>
+                      <p className="mt-1 text-sm">Simulasi nyata mempercepat pemahaman jamaah sebelum berangkat.</p>
                     </div>
-                    <div>
-                      <p className="text-sm font-semibold text-white">Efisiensi Pelatihan</p>
-                      <p className="mt-1.5 text-xs text-slate-400">Simulasi nyata mempercepat pemahaman jamaah sebelum berangkat.</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="rounded-2xl bg-gradient-to-br from-cyan-500/10 to-cyan-600/5 border border-cyan-500/20 p-5">
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 mt-1">
-                      <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-cyan-500/20">
-                        <span className="text-cyan-400 text-xs font-bold">✓</span>
-                      </div>
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-white">Standar Profesional</p>
-                      <p className="mt-1.5 text-xs text-slate-400">Cocok untuk presentasi ke pemerintah dan travel besar.</p>
+                    <div className="rounded-2xl bg-slate-100/90 p-4">
+                      <p className="font-semibold">Standar Profesional</p>
+                      <p className="mt-1 text-sm">Cocok untuk presentasi ke pemerintah dan travel besar.</p>
                     </div>
                   </div>
                 </div>
@@ -198,40 +190,48 @@ export default function Home() {
 
         <section className="mt-14">
           <div className="mb-8 space-y-3">
-            <p className="text-sm uppercase tracking-[0.3em] text-emerald-300">Galeri</p>
-            <h2 className="text-3xl font-semibold text-white">Lihat pengalaman Virtual Haramain</h2>
+            <p className="text-sm uppercase tracking-[0.3em] text-emerald-400">Galeri</p>
+            <h2 className="text-3xl font-semibold text-slate-950">Lihat pengalaman Virtual Haramain</h2>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/80 shadow-lg hover:shadow-emerald-950/30 transition">
-              <div className="aspect-square bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1617638924702-92da37ce6ffe?w=500&h=500&fit=crop" alt="VR Headset" className="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg transition hover:shadow-emerald-200/40">
+              <div className="aspect-square bg-slate-100 overflow-hidden">
+                <img src="/images/Testi1.jpeg" alt="VR Headset" className="w-full h-full object-cover object-center transition duration-300 group-hover:scale-105" />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent flex items-end">
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent flex items-end">
                 <p className="p-4 text-sm font-semibold text-white">Perangkat VR Modern</p>
               </div>
             </div>
-            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/80 shadow-lg hover:shadow-emerald-950/30 transition">
-              <div className="aspect-square bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1504678846822-64c1b8a84325?w=500&h=500&fit=crop" alt="Simulasi Tawaf" className="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+            <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg transition hover:shadow-cyan-200/40">
+              <div className="aspect-square bg-slate-100 overflow-hidden">
+                <img src="/images/Testi2.jpeg" alt="Simulasi Tawaf" className="w-full h-full object-cover object-center transition duration-300 group-hover:scale-105" />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent flex items-end">
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent flex items-end">
                 <p className="p-4 text-sm font-semibold text-white">Simulasi Tawaf 360°</p>
               </div>
             </div>
-            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/80 shadow-lg hover:shadow-emerald-950/30 transition">
-              <div className="aspect-square bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=500&h=500&fit=crop" alt="Masjid Haram" className="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+            <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg transition hover:shadow-emerald-200/40">
+              <div className="aspect-square bg-slate-100 overflow-hidden">
+                <img src="/images/Testi3.jpeg" alt="Masjid Haram" className="w-full h-full object-cover object-center transition duration-300 group-hover:scale-105" />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent flex items-end">
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent flex items-end">
                 <p className="p-4 text-sm font-semibold text-white">Suasana Masjidil Haram</p>
               </div>
             </div>
-            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/80 shadow-lg hover:shadow-emerald-950/30 transition">
-              <div className="aspect-square bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=500&fit=crop" alt="Presentasi" className="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+            <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg transition hover:shadow-cyan-200/40">
+              <div className="aspect-square bg-slate-100 overflow-hidden">
+                <img src="/images/Testi4.jpeg" alt="Presentasi" className="w-full h-full object-cover object-center transition duration-300 group-hover:scale-105" />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent flex items-end">
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent flex items-end">
                 <p className="p-4 text-sm font-semibold text-white">Presentasi untuk Travel</p>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg transition hover:shadow-emerald-200/40">
+              <div className="aspect-square bg-slate-100 overflow-hidden">
+                <img src="/images/Testi5.jpeg" alt="Suasana Manasik" className="w-full h-full object-cover object-center transition duration-300 group-hover:scale-105" />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent flex items-end">
+                <p className="p-4 text-sm font-semibold text-white">Suasana Manasik VR</p>
               </div>
             </div>
           </div>
