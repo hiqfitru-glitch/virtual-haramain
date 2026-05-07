@@ -10,8 +10,18 @@ export default function Home() {
                 <p className="text-xs uppercase tracking-[0.25em] text-emerald-700 font-medium">Virtual Reality Leader</p>
               </div>
               <div className="relative space-y-4">
-                <h1 className="text-5xl sm:text-6xl font-bold leading-tight tracking-tight text-slate-900">
-                  Manasik Haji Lebih <span className="bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">Nyata</span>
+                <h1 className="text-5xl sm:text-6xl font-bold leading-tight tracking-tight text-slate-900 relative inline-block">
+  Manasik Haji Lebih{" "}
+  <span className="bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">
+    Nyata
+  </span>
+
+  {/* VR ICON */}
+  <img
+    src="/vr.png"
+    alt="VR Icon"
+    className="absolute -right-8 bottom-2 w-9 h-9"
+  />
                 </h1>
                 <div className="absolute -right-3 bottom-2 flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white shadow-md shadow-slate-300/30">
                   <span className="text-sm font-bold text-emerald-600">VR</span>
