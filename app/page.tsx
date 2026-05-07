@@ -37,7 +37,7 @@ export default function Home() {
                   href="https://wa.me/6281379389964"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition hover:shadow-emerald-500/30"
+                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition hover:shadow-emerald-500/30 hover:scale-105"
                 >
                   Konsultasi WhatsApp
                 </a>
@@ -45,7 +45,7 @@ export default function Home() {
                   href="https://forms.gle/LS78LwNGtJcVHPsPA"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-slate-950 px-8 py-4 text-sm font-semibold text-white transition hover:border-slate-400 hover:bg-slate-900"
+                  className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-slate-950 px-8 py-4 text-sm font-semibold text-white transition hover:border-slate-400 hover:bg-slate-900 hover:scale-105"
                 >
                   Isi Data Sekarang
                 </a>
