@@ -3,7 +3,7 @@ export default function Home() {
     <main
       className="relative min-h-screen bg-white text-slate-950 font-sans"
       style={{
-        backgroundImage: "url('/images/Background.jpeg')",
+        backgroundImage: "url('/images/background.jpeg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -46,7 +46,7 @@ export default function Home() {
             </div>
             <div className="relative rounded-[1.5rem] overflow-hidden border border-slate-200/80 bg-slate-100 shadow-xl shadow-slate-950/10">
               <div className="relative h-[28rem] sm:h-[30rem] lg:h-[34rem]">
-                <img src="/images/VR.png" alt="Virtual Haramain VR" className="h-full w-full object-cover object-center" />
+                <img src="/images/vr.png" alt="Virtual Haramain VR" className="h-full w-full object-cover object-center" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
                 <div className="absolute left-6 bottom-6 right-6 rounded-3xl border border-white/80 bg-white/90 p-6 backdrop-blur-md shadow-2xl shadow-slate-950/10">
                   <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Keunggulan Kami</p>
@@ -196,7 +196,7 @@ export default function Home() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg transition hover:shadow-emerald-200/40">
               <div className="aspect-square bg-slate-100 overflow-hidden">
-                <img src="/images/Testi1.jpeg" alt="VR Headset" className="w-full h-full object-cover object-center transition duration-300 group-hover:scale-105" />
+                <img src="/images/testi1.jpeg" alt="VR Headset" className="w-full h-full object-cover object-center transition duration-300 group-hover:scale-105" />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent flex items-end">
                 <p className="p-4 text-sm font-semibold text-white">Perangkat VR Modern</p>
@@ -204,7 +204,7 @@ export default function Home() {
             </div>
             <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg transition hover:shadow-cyan-200/40">
               <div className="aspect-square bg-slate-100 overflow-hidden">
-                <img src="/images/Testi2.jpeg" alt="Simulasi Tawaf" className="w-full h-full object-cover object-center transition duration-300 group-hover:scale-105" />
+                <img src="/images/testi2.jpeg" alt="Simulasi Tawaf" className="w-full h-full object-cover object-center transition duration-300 group-hover:scale-105" />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent flex items-end">
                 <p className="p-4 text-sm font-semibold text-white">Simulasi Tawaf 360°</p>
@@ -212,7 +212,7 @@ export default function Home() {
             </div>
             <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg transition hover:shadow-emerald-200/40">
               <div className="aspect-square bg-slate-100 overflow-hidden">
-                <img src="/images/Testi3.jpeg" alt="Masjid Haram" className="w-full h-full object-cover object-center transition duration-300 group-hover:scale-105" />
+                <img src="/images/testi3.jpeg" alt="Masjid Haram" className="w-full h-full object-cover object-center transition duration-300 group-hover:scale-105" />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent flex items-end">
                 <p className="p-4 text-sm font-semibold text-white">Suasana Masjidil Haram</p>
@@ -220,7 +220,7 @@ export default function Home() {
             </div>
             <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg transition hover:shadow-cyan-200/40">
               <div className="aspect-square bg-slate-100 overflow-hidden">
-                <img src="/images/Testi4.jpeg" alt="Presentasi" className="w-full h-full object-cover object-center transition duration-300 group-hover:scale-105" />
+                <img src="/images/testi4.jpeg" alt="Presentasi" className="w-full h-full object-cover object-center transition duration-300 group-hover:scale-105" />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent flex items-end">
                 <p className="p-4 text-sm font-semibold text-white">Presentasi untuk Travel</p>
@@ -228,7 +228,7 @@ export default function Home() {
             </div>
             <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg transition hover:shadow-emerald-200/40">
               <div className="aspect-square bg-slate-100 overflow-hidden">
-                <img src="/images/Testi5.jpeg" alt="Suasana Manasik" className="w-full h-full object-cover object-center transition duration-300 group-hover:scale-105" />
+                <img src="/images/testi5.jpeg" alt="Suasana Manasik" className="w-full h-full object-cover object-center transition duration-300 group-hover:scale-105" />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent flex items-end">
                 <p className="p-4 text-sm font-semibold text-white">Suasana Manasik VR</p>
