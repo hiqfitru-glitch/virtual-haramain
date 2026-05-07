@@ -220,8 +220,8 @@ export default function Home() {
             <p className="text-sm uppercase tracking-[0.3em] text-emerald-600">Galeri</p>
             <h2 className="text-3xl font-semibold text-slate-900">Lihat pengalaman Virtual Haramain</h2>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-            <div className="group relative overflow-hidden rounded-3xl border border-slate-300 bg-white shadow-md transition hover:shadow-emerald-200/60">
+          <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4">
+            <div className="group relative overflow-hidden rounded-3xl border border-slate-300 bg-white shadow-md transition hover:shadow-emerald-200/60 hover:scale-105 snap-center flex-shrink-0 w-full sm:w-1/2 lg:w-1/3">
               <div className="aspect-square bg-slate-100 overflow-hidden">
                 <img src="/images/testi1.jpeg" alt="VR Headset" className="h-full w-full object-cover transition duration-300 group-hover:scale-105" />
               </div>
@@ -229,7 +229,7 @@ export default function Home() {
                 <p className="p-4 text-sm font-semibold text-white">Perangkat VR Modern</p>
               </div>
             </div>
-            <div className="group relative overflow-hidden rounded-3xl border border-slate-300 bg-white shadow-md transition hover:shadow-cyan-200/60">
+            <div className="group relative overflow-hidden rounded-3xl border border-slate-300 bg-white shadow-md transition hover:shadow-cyan-200/60 hover:scale-105 snap-center flex-shrink-0 w-full sm:w-1/2 lg:w-1/3">
               <div className="aspect-square bg-slate-100 overflow-hidden">
                 <img src="/images/testi2.jpeg" alt="Simulasi Tawaf" className="h-full w-full object-cover transition duration-300 group-hover:scale-105" />
               </div>
@@ -237,7 +237,7 @@ export default function Home() {
                 <p className="p-4 text-sm font-semibold text-white">Simulasi Tawaf 360°</p>
               </div>
             </div>
-            <div className="group relative overflow-hidden rounded-3xl border border-slate-300 bg-white shadow-md transition hover:shadow-emerald-200/60">
+            <div className="group relative overflow-hidden rounded-3xl border border-slate-300 bg-white shadow-md transition hover:shadow-emerald-200/60 hover:scale-105 snap-center flex-shrink-0 w-full sm:w-1/2 lg:w-1/3">
               <div className="aspect-square bg-slate-100 overflow-hidden">
                 <img src="/images/testi3.jpeg" alt="Masjid Haram" className="h-full w-full object-cover transition duration-300 group-hover:scale-105" />
               </div>
@@ -245,7 +245,7 @@ export default function Home() {
                 <p className="p-4 text-sm font-semibold text-white">Suasana Masjidil Haram</p>
               </div>
             </div>
-            <div className="group relative overflow-hidden rounded-3xl border border-slate-300 bg-white shadow-md transition hover:shadow-cyan-200/60">
+            <div className="group relative overflow-hidden rounded-3xl border border-slate-300 bg-white shadow-md transition hover:shadow-cyan-200/60 hover:scale-105 snap-center flex-shrink-0 w-full sm:w-1/2 lg:w-1/3">
               <div className="aspect-square bg-slate-100 overflow-hidden">
                 <img src="/images/testi4.jpeg" alt="Presentasi" className="h-full w-full object-cover transition duration-300 group-hover:scale-105" />
               </div>
@@ -253,7 +253,7 @@ export default function Home() {
                 <p className="p-4 text-sm font-semibold text-white">Presentasi untuk Travel</p>
               </div>
             </div>
-            <div className="group relative overflow-hidden rounded-3xl border border-slate-300 bg-white shadow-md transition hover:shadow-emerald-200/60">
+            <div className="group relative overflow-hidden rounded-3xl border border-slate-300 bg-white shadow-md transition hover:shadow-emerald-200/60 hover:scale-105 snap-center flex-shrink-0 w-full sm:w-1/2 lg:w-1/3">
               <div className="aspect-square bg-slate-100 overflow-hidden">
                 <img src="/images/testi5.jpeg" alt="Suasana Manasik" className="h-full w-full object-cover transition duration-300 group-hover:scale-105" />
               </div>
