@@ -2,28 +2,18 @@ export default function Home() {
   return (
     <main className="relative min-h-screen bg-gradient-to-b from-white via-white to-slate-50 text-slate-950 font-sans">
       <div className="relative mx-auto max-w-7xl px-6 py-10 sm:px-8 lg:px-12">
-        <header className="relative rounded-3xl bg-white shadow-xl shadow-slate-200/20">
+        <header className="relative rounded-3xl bg-white shadow-xl shadow-slate-200/20 overflow-hidden">
           <div className="grid gap-16 lg:grid-cols-[1.2fr_0.9fr] lg:items-center py-16 px-8 sm:px-12 lg:px-16">
             <div className="space-y-8">
               <div className="inline-flex items-center gap-2 rounded-full border border-emerald-300/60 bg-emerald-50 px-4 py-2">
                 <span className="inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
                 <p className="text-xs uppercase tracking-[0.25em] text-emerald-700 font-medium">Virtual Reality Leader</p>
               </div>
-              <div className="relative">
-                <h1 className="text-5xl sm:text-6xl font-bold leading-tight tracking-tight text-slate-900">
+              <div>
+                <h1 className="text-5xl sm:text-6xl font-bold leading-tight tracking-tight text-slate-900 max-w-3xl">
                   Manasik Haji Lebih{" "}
-                  <span className="relative inline-block">
-                    <span className="bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">
-                      Nyata
-                    </span>
-                    {/* Floating VR Badge */}
-                    <div className="relative inline-flex items-center justify-center">
-  <div className="absolute -right-6 -top-3 w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-cyan-400 shadow-lg blur-[0.2px] animate-pulse" />
-  
-  <div className="relative w-8 h-8 rounded-full bg-white/80 backdrop-blur border border-slate-200 flex items-center justify-center shadow-md">
-    <span className="text-xs font-bold text-emerald-600">VR</span>
-  </div>
-</div>
+                  <span className="bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">
+                    Nyata
                   </span>
                 </h1>
               </div>
@@ -49,26 +39,48 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="relative rounded-3xl overflow-hidden bg-slate-100 shadow-2xl shadow-slate-900/10 h-[28rem] sm:h-[30rem] lg:h-[34rem]">
-              <img
-                src="/images/vr.png"
-                alt="Virtual Haramain VR"
-                className="h-full w-full object-cover object-center"
-              />
-              {/* Premium Keunggulan Kami Card */}
-              <div className="bg-white/70 backdrop-blur-xl border border-white/40 shadow-xl rounded-3xl p-6 space-y-4">
+            <div className="relative rounded-[2.5rem] animate-[float_6s_ease-in-out_infinite] bg-gradient-to-br from-slate-100 via-slate-50 to-white p-6 shadow-[0_36px_80px_-40px_rgba(15,23,42,0.25)] h-[28rem] sm:h-[30rem] lg:h-[34rem]">
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute -left-8 top-10 h-40 w-40 rounded-full bg-cyan-100/60 blur-3xl" />
+                <div className="absolute right-0 bottom-10 h-56 w-56 rounded-full bg-emerald-100/50 blur-3xl" />
+              </div>
+              <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:48px_48px]" />
+              <div className="relative h-full overflow-hidden rounded-[2rem] border border-white/70 shadow-inner shadow-slate-900/5">
+                <img
+                  src="/images/vr.png"
+                  alt="Virtual Haramain VR"
+                  className="h-full w-full object-cover object-center scale-110 hover:scale-115 transition duration-700"
+                />
+              </div>
+              <div className="absolute bottom-6 right-6 w-[72%] rounded-[2.5rem] bg-white/75 backdrop-blur-2xl border border-white/60 shadow-[0_32px_80px_-40px_rgba(15,23,42,0.25)] p-6 transition duration-300 hover:-translate-y-1">
                 <p className="text-sm uppercase tracking-[0.3em] text-slate-500 font-medium">Keunggulan Kami</p>
                 <div className="mt-6 space-y-4">
-                  <div className="rounded-xl bg-white/60 backdrop-blur-sm border border-white/30 p-4 shadow-sm">
-                    <p className="font-semibold text-slate-900">Efisiensi Pelatihan</p>
-                    <p className="mt-2 text-sm text-slate-700 leading-6">Simulasi nyata mempercepat pemahaman jamaah sebelum berangkat.</p>
+                  <div className="flex gap-4 rounded-3xl bg-white/65 border border-slate-200/50 p-4 shadow-sm transition hover:bg-white">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
+                      ✓
+                    </div>
+                    <div>
+                      <p className="font-semibold text-slate-900">Efisiensi Pelatihan</p>
+                      <p className="mt-2 text-sm text-slate-700 leading-6">Simulasi nyata mempercepat pemahaman jamaah sebelum berangkat.</p>
+                    </div>
                   </div>
-                  <div className="rounded-xl bg-white/60 backdrop-blur-sm border border-white/30 p-4 shadow-sm">
-                    <p className="font-semibold text-slate-900">Standar Profesional</p>
-                    <p className="mt-2 text-sm text-slate-700 leading-6">Cocok untuk presentasi ke pemerintah dan travel besar.</p>
+                  <div className="flex gap-4 rounded-3xl bg-white/65 border border-slate-200/50 p-4 shadow-sm transition hover:bg-white">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
+                      ✓
+                    </div>
+                    <div>
+                      <p className="font-semibold text-slate-900">Standar Profesional</p>
+                      <p className="mt-2 text-sm text-slate-700 leading-6">Cocok untuk presentasi ke pemerintah dan travel besar.</p>
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="pointer-events-none hidden lg:flex absolute top-[46%] left-[58%] -translate-x-1/2 -translate-y-1/2 z-30">
+            <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-white/85 border border-white/70 shadow-2xl shadow-slate-900/10 backdrop-blur-xl animate-pulse">
+              <span className="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-200/60 to-cyan-200/40 blur-2xl" />
+              <span className="relative text-xs font-semibold text-emerald-700">VR</span>
             </div>
           </div>
         </header>
