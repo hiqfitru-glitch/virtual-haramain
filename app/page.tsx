@@ -10,11 +10,23 @@ export default function Home() {
                 <p className="text-xs uppercase tracking-[0.25em] text-emerald-700 font-medium">Virtual Reality Leader</p>
               </div>
               <div>
-                <h1 className="text-5xl sm:text-6xl font-bold leading-tight tracking-tight text-slate-900 max-w-3xl">
+                <h1 className="text-5xl sm:text-6xl font-bold leading-tight tracking-tight text-slate-900 max-w-3xl relative">
                   Manasik Haji Lebih{" "}
                   <span className="bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">
                     Nyata
                   </span>
+                  {/* VR Headset Icon */}
+                  <div className="absolute -right-16 top-1/2 -translate-y-1/2 animate-bounce">
+                    <div className="relative">
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400/40 to-emerald-400/40 blur-xl" />
+                      <img
+                        src="/images/vr-headset.png"
+                        alt="VR Headset"
+                        className="relative w-12 h-12 drop-shadow-lg"
+                      />
+                      <span className="absolute inset-0 flex items-center justify-center text-[8px] font-bold text-cyan-700">VR</span>
+                    </div>
+                  </div>
                 </h1>
               </div>
               <p className="max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
@@ -46,17 +58,19 @@ export default function Home() {
               </div>
               <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:48px_48px]" />
               <div className="relative h-full overflow-hidden rounded-[2rem] border border-white/70 shadow-inner shadow-slate-900/5">
+                {/* Large Cyan Glow */}
+                <div className="absolute inset-0 bg-cyan-200/10 blur-3xl rounded-[2rem]" />
                 <img
                   src="/images/vr.png"
                   alt="Virtual Haramain VR"
-                  className="h-full w-full object-cover object-center scale-110 hover:scale-115 transition duration-700"
+                  className="relative h-full w-full object-cover object-center scale-110 hover:scale-115 transition duration-700"
                 />
               </div>
-              <div className="absolute bottom-6 right-6 w-[72%] rounded-[2.5rem] bg-white/75 backdrop-blur-2xl border border-white/60 shadow-[0_32px_80px_-40px_rgba(15,23,42,0.25)] p-6 transition duration-300 hover:-translate-y-1">
+              <div className="absolute bottom-6 right-6 w-[72%] rounded-[2.5rem] bg-gradient-to-br from-cyan-50 via-cyan-100/70 to-emerald-50 backdrop-blur-2xl border border-cyan-200/50 shadow-[0_32px_80px_-40px_rgba(15,23,42,0.25)] p-6 transition duration-300 hover:-translate-y-1">
                 <p className="text-sm uppercase tracking-[0.3em] text-slate-500 font-medium">Keunggulan Kami</p>
                 <div className="mt-6 space-y-4">
-                  <div className="flex gap-4 rounded-3xl bg-white/65 border border-slate-200/50 p-4 shadow-sm transition hover:bg-white">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
+                  <div className="flex gap-4 rounded-3xl bg-white/80 border border-slate-200/50 p-4 shadow-sm transition hover:bg-white hover:translate-y-[-2px]">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-100 text-cyan-700">
                       ✓
                     </div>
                     <div>
@@ -64,7 +78,7 @@ export default function Home() {
                       <p className="mt-2 text-sm text-slate-700 leading-6">Simulasi nyata mempercepat pemahaman jamaah sebelum berangkat.</p>
                     </div>
                   </div>
-                  <div className="flex gap-4 rounded-3xl bg-white/65 border border-slate-200/50 p-4 shadow-sm transition hover:bg-white">
+                  <div className="flex gap-4 rounded-3xl bg-white/80 border border-slate-200/50 p-4 shadow-sm transition hover:bg-white hover:translate-y-[-2px]">
                     <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
                       ✓
                     </div>
@@ -75,12 +89,6 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="pointer-events-none hidden lg:flex absolute top-[46%] left-[58%] -translate-x-1/2 -translate-y-1/2 z-30">
-            <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-white/85 border border-white/70 shadow-2xl shadow-slate-900/10 backdrop-blur-xl animate-pulse">
-              <span className="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-200/60 to-cyan-200/40 blur-2xl" />
-              <span className="relative text-xs font-semibold text-emerald-700">VR</span>
             </div>
           </div>
         </header>
