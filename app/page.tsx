@@ -2,40 +2,40 @@ export default function Home() {
   return (
     <main className="relative min-h-screen bg-gradient-to-b from-white via-white to-slate-50 text-slate-950 font-sans">
       <div className="relative mx-auto max-w-7xl px-6 py-10 sm:px-8 lg:px-12">
-        <header className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-10 shadow-lg shadow-slate-200/50">
-          <div className="relative grid gap-10 lg:grid-cols-[1.2fr_0.9fr] lg:items-center">
-            <div className="space-y-6">
+        <header className="relative rounded-3xl bg-white shadow-xl shadow-slate-200/20">
+          <div className="grid gap-16 lg:grid-cols-[1.2fr_0.9fr] lg:items-center py-16 px-8 sm:px-12 lg:px-16">
+            <div className="space-y-8">
               <div className="inline-flex items-center gap-2 rounded-full border border-emerald-300/60 bg-emerald-50 px-4 py-2">
                 <span className="inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
                 <p className="text-xs uppercase tracking-[0.25em] text-emerald-700 font-medium">Virtual Reality Leader</p>
               </div>
-              <div className="relative space-y-4">
-                <h1 className="text-5xl sm:text-6xl font-bold leading-tight tracking-tight text-slate-900 relative inline-block">
-  Manasik Haji Lebih{" "}
-  <span className="bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">
-    Nyata
-  </span>
-
-  {/* VR ICON */}
-  <img
-    src="/vr.png"
-    alt="VR Icon"
-    className="absolute -right-8 bottom-2 w-9 h-9"
-  />
+              <div className="relative">
+                <h1 className="text-5xl sm:text-6xl font-bold leading-tight tracking-tight text-slate-900">
+                  Manasik Haji Lebih{" "}
+                  <span className="relative inline-block">
+                    <span className="bg-gradient-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">
+                      Nyata
+                    </span>
+                    {/* Floating VR Badge */}
+                    <div className="relative inline-flex items-center justify-center">
+  <div className="absolute -right-6 -top-3 w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-cyan-400 shadow-lg blur-[0.2px] animate-pulse" />
+  
+  <div className="relative w-8 h-8 rounded-full bg-white/80 backdrop-blur border border-slate-200 flex items-center justify-center shadow-md">
+    <span className="text-xs font-bold text-emerald-600">VR</span>
+  </div>
+</div>
+                  </span>
                 </h1>
-                <div className="absolute -right-3 bottom-2 flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white shadow-md shadow-slate-300/30">
-                  <span className="text-sm font-bold text-emerald-600">VR</span>
-                </div>
               </div>
               <p className="max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
                 Solusi manasik haji premium untuk travel umrah dan jamaah individu — pengalaman VR 360° imersif yang menjadikan pembelajaran ibadah lebih jelas, terstruktur, dan profesional.
               </p>
-              <div className="flex flex-col gap-3 sm:flex-row pt-2">
+              <div className="flex flex-col gap-4 sm:flex-row pt-4">
                 <a
                   href="https://wa.me/6281379389964"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition hover:shadow-emerald-500/30"
+                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition hover:shadow-emerald-500/30"
                 >
                   Konsultasi WhatsApp
                 </a>
@@ -43,31 +43,29 @@ export default function Home() {
                   href="https://forms.gle/LS78LwNGtJcVHPsPA"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-slate-950 px-8 py-3 text-sm font-semibold text-white transition hover:border-slate-400 hover:bg-slate-900"
+                  className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-slate-950 px-8 py-4 text-sm font-semibold text-white transition hover:border-slate-400 hover:bg-slate-900"
                 >
                   Isi Data Sekarang
                 </a>
               </div>
             </div>
-            <div className="relative rounded-[1.5rem] overflow-hidden border border-slate-200/80 bg-slate-100 shadow-xl shadow-slate-950/10">
-              <div className="relative h-[28rem] sm:h-[30rem] lg:h-[34rem]">
-                <img
-                  src="/images/vr.png"
-                  alt="Virtual Haramain VR"
-                  className="h-full w-full object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent" />
-                <div className="absolute left-6 bottom-6 right-6 rounded-3xl border border-white/80 bg-white/90 p-6 backdrop-blur-md shadow-2xl shadow-slate-950/10">
-                  <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Keunggulan Kami</p>
-                  <div className="mt-5 space-y-4 text-slate-700">
-                    <div className="rounded-2xl bg-slate-100/90 p-4">
-                      <p className="font-semibold">Efisiensi Pelatihan</p>
-                      <p className="mt-1 text-sm">Simulasi nyata mempercepat pemahaman jamaah sebelum berangkat.</p>
-                    </div>
-                    <div className="rounded-2xl bg-slate-100/90 p-4">
-                      <p className="font-semibold">Standar Profesional</p>
-                      <p className="mt-1 text-sm">Cocok untuk presentasi ke pemerintah dan travel besar.</p>
-                    </div>
+            <div className="relative rounded-3xl overflow-hidden bg-slate-100 shadow-2xl shadow-slate-900/10 h-[28rem] sm:h-[30rem] lg:h-[34rem]">
+              <img
+                src="/images/vr.png"
+                alt="Virtual Haramain VR"
+                className="h-full w-full object-cover object-center"
+              />
+              {/* Premium Keunggulan Kami Card */}
+              <div className="bg-white/70 backdrop-blur-xl border border-white/40 shadow-xl rounded-3xl p-6 space-y-4">
+                <p className="text-sm uppercase tracking-[0.3em] text-slate-500 font-medium">Keunggulan Kami</p>
+                <div className="mt-6 space-y-4">
+                  <div className="rounded-xl bg-white/60 backdrop-blur-sm border border-white/30 p-4 shadow-sm">
+                    <p className="font-semibold text-slate-900">Efisiensi Pelatihan</p>
+                    <p className="mt-2 text-sm text-slate-700 leading-6">Simulasi nyata mempercepat pemahaman jamaah sebelum berangkat.</p>
+                  </div>
+                  <div className="rounded-xl bg-white/60 backdrop-blur-sm border border-white/30 p-4 shadow-sm">
+                    <p className="font-semibold text-slate-900">Standar Profesional</p>
+                    <p className="mt-2 text-sm text-slate-700 leading-6">Cocok untuk presentasi ke pemerintah dan travel besar.</p>
                   </div>
                 </div>
               </div>
