@@ -47,7 +47,7 @@ export default function TentangKami() {
               Teknologi Imersif 360°
             </h3>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
-              Melalui visualisasi lingkungan Masjidil Haram, Ka'bah, lintasan Tawaf, dan lokasi Sa'i yang dirancang presisi, jamaah dapat merasakan atmosfer langsung di lapangan.
+              Melalui visualisasi lingkungan Masjidil Haram, Ka&apos;bah, lintasan Tawaf, dan lokasi Sa&apos;i yang dirancang presisi, jamaah dapat merasakan atmosfer langsung di lapangan.
             </p>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
               Dengan perangkat VR portabel, kami menghadirkan simulasi berkualitas tinggi tanpa setup yang rumit, menjadikannya sarana pelatihan yang efisien bagi siapa saja.

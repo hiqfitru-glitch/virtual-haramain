@@ -19,7 +19,9 @@ export default function Galeri() {
   const isModalOpen = useRef(false);
 
   // Sync state with mutable ref so RAF loop can read it without restarts
-  isModalOpen.current = !!selectedMedia;
+  useEffect(() => {
+    isModalOpen.current = !!selectedMedia;
+  }, [selectedMedia]);
 
   const photos: MediaItem[] = [
     { type: "photo", src: "/images/testi1.jpeg", title: "VR Headset Showcase" },

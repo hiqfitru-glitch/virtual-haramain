@@ -28,7 +28,9 @@ export default function Home() {
   const [leadSuccess, setLeadSuccess] = useState(false);
   const [leadError, setLeadError] = useState<string | null>(null);
 
-  isModalOpenRef.current = isLeadModalOpen;
+  useEffect(() => {
+    isModalOpenRef.current = isLeadModalOpen;
+  }, [isLeadModalOpen]);
 
   // Close lead modal on Escape key
   useEffect(() => {
@@ -74,8 +76,9 @@ export default function Home() {
         setIsLeadModalOpen(false);
         setLeadSuccess(false);
       }, 3000);
-    } catch (err: any) {
-      setLeadError(err.message || "Terjadi kesalahan saat mengirim data.");
+    } catch (err) {
+      const error = err as Error;
+      setLeadError(error.message || "Terjadi kesalahan saat mengirim data.");
     } finally {
       setLeadLoading(false);
     }
@@ -283,7 +286,7 @@ export default function Home() {
                   Tidak membayangkan kondisi lapangan
                 </p>
                 <p className="mt-2.5 leading-relaxed text-sm text-slate-400">
-                  Kondisi masjid, tawaf, dan sa'i sulit tergambar tanpa pengalaman visual yang kuat dan interaktif.
+                  Kondisi masjid, tawaf, dan sa&apos;i sulit tergambar tanpa pengalaman visual yang kuat dan interaktif.
                 </p>
               </div>
             </div>
@@ -452,7 +455,7 @@ export default function Home() {
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 group-hover:bg-amber-500/20 group-hover:border-amber-500/30 transition duration-300 text-xl font-bold">
                 🕋
               </div>
-              <h3 className="mt-5 font-bold text-slate-200 text-base sm:text-lg">Untuk Jama'ah Pemula</h3>
+              <h3 className="mt-5 font-bold text-slate-200 text-base sm:text-lg">Untuk Jama&apos;ah Pemula</h3>
               <p className="mt-3 text-xs sm:text-sm text-slate-400 leading-relaxed font-light">
                 Ideal bagi jamaah yang belum pernah berkunjung ke tanah suci untuk mempersiapkan diri dengan lebih matang.
               </p>
