@@ -61,7 +61,7 @@ export default function Navbar() {
           {/* Header CTA Button */}
           <div className="hidden sm:block">
             <a
-              href="https://wa.me/6281379389964?text=Assalamu%27alaikum%20Admin%20Virtual%20Haramain%2C%20saya%20ingin%20berkonsultasi%20mengenai%20paket%20layanan%20manasik%20VR."
+              href="https://wa.me/6281374128199?text=Assalamu%27alaikum%20Admin%20Virtual%20Haramain%2C%20saya%20ingin%20berkonsultasi%20mengenai%20paket%20layanan%20manasik%20VR."
               target="_blank"
               rel="noreferrer"
               className="relative group inline-flex items-center justify-center rounded-full bg-gradient-to-r from-amber-500 to-amber-600 px-5.5 py-2.5 text-xs font-bold text-slate-950 shadow-[0_4px_15px_rgba(212,175,55,0.2)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_6px_20px_rgba(212,175,55,0.35)] active:scale-[0.98] overflow-hidden"
@@ -118,7 +118,7 @@ export default function Navbar() {
             })}
             <div className="pt-4 border-t border-white/5 mt-3">
               <a
-                href="https://wa.me/6281379389964?text=Assalamu%27alaikum%20Admin%20Virtual%20Haramain%2C%20saya%20ingin%20berkonsultasi%20mengenai%20paket%20layanan%20manasik%20VR."
+                href="https://wa.me/6281374128199?text=Assalamu%27alaikum%20Admin%20Virtual%20Haramain%2C%20saya%20ingin%20berkonsultasi%20mengenai%20paket%20layanan%20manasik%20VR."
                 target="_blank"
                 rel="noreferrer"
                 className="flex w-full items-center justify-center rounded-full bg-gradient-to-r from-amber-500 to-amber-600 py-3 text-sm font-bold text-slate-950 shadow-[0_4px_15px_rgba(212,175,55,0.2)]"

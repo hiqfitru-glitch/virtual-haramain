@@ -54,7 +54,7 @@ export default function Footer() {
             </p>
             <div className="flex flex-col gap-2 pt-2">
               <a
-                href="https://wa.me/6281379389964?text=Assalamu%27alaikum%20Admin%20Virtual%20Haramain%2C%20saya%20ingin%20berkonsultasi%20mengenai%20paket%20layanan%20manasik%20VR."
+                href="https://wa.me/6281374128199?text=Assalamu%27alaikum%20Admin%20Virtual%20Haramain%2C%20saya%20ingin%20berkonsultasi%20mengenai%20paket%20layanan%20manasik%20VR."
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-1.5 rounded-full bg-emerald-950/40 hover:bg-emerald-900/40 border border-emerald-500/20 py-2.5 text-xs font-bold text-emerald-400 transition duration-300"

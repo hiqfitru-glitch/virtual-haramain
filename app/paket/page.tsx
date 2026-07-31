@@ -59,7 +59,7 @@ export default function PaketHarga() {
 
             <div className="mt-8">
               <a
-                href="https://wa.me/6281379389964?text=Assalamu%27alaikum%20Admin%20Virtual%20Haramain%2C%20saya%20ingin%20berkonsultasi%20mengenai%20paket%20layanan%20manasik%20VR."
+                href="https://wa.me/6281374128199?text=Assalamu%27alaikum%20Admin%20Virtual%20Haramain%2C%20saya%20ingin%20berkonsultasi%20mengenai%20paket%20layanan%20manasik%20VR."
                 target="_blank"
                 rel="noreferrer"
                 className="w-full justify-center group inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-950/40 hover:bg-emerald-900/40 px-6 py-4.5 text-sm font-semibold text-emerald-400 transition-all"
@@ -109,7 +109,7 @@ export default function PaketHarga() {
 
             <div className="mt-8">
               <a
-                href="https://wa.me/6281379389964?text=Assalamu%27alaikum%20Admin%20Virtual%20Haramain%2C%20saya%20ingin%20berkonsultasi%20mengenai%20paket%20layanan%20manasik%20VR."
+                href="https://wa.me/6281374128199?text=Assalamu%27alaikum%20Admin%20Virtual%20Haramain%2C%20saya%20ingin%20berkonsultasi%20mengenai%20paket%20layanan%20manasik%20VR."
                 target="_blank"
                 rel="noreferrer"
                 className="w-full justify-center group inline-flex items-center rounded-full bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 px-6 py-4.5 text-sm font-bold text-slate-950 shadow-[0_4px_20px_rgba(212,175,55,0.2)] hover:shadow-[0_6px_25px_rgba(212,175,55,0.35)] transition-all"

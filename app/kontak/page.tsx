@@ -40,7 +40,7 @@ export default function Kontak() {
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-emerald-400 font-bold">💬</span>
-                <p className="text-slate-300">+62 813-7938-9964</p>
+                <p className="text-slate-300">+62 813-7412-8199</p>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-emerald-400 font-bold">✉️</span>
@@ -65,7 +65,7 @@ export default function Kontak() {
 
             <div className="grid gap-4 sm:grid-cols-2 pt-6">
               <a
-                href="https://wa.me/6281379389964?text=Assalamu%27alaikum%20Admin%20Virtual%20Haramain%2C%20saya%20ingin%20berkonsultasi%20mengenai%20paket%20layanan%20manasik%20VR."
+                href="https://wa.me/6281374128199?text=Assalamu%27alaikum%20Admin%20Virtual%20Haramain%2C%20saya%20ingin%20berkonsultasi%20mengenai%20paket%20layanan%20manasik%20VR."
                 target="_blank"
                 rel="noreferrer"
                 className="group relative inline-flex items-center justify-center rounded-full bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 px-6 py-4.5 text-sm font-bold text-slate-950 shadow-[0_4px_15px_rgba(212,175,55,0.3)] transition-all hover:scale-[1.02] overflow-hidden text-center"

@@ -168,7 +168,7 @@ export default function Home() {
               {/* CTA Buttons */}
               <div className="flex flex-col gap-4 sm:flex-row pt-4">
                 <a
-                  href="https://wa.me/6281379389964?text=Assalamu%27alaikum%20Admin%20Virtual%20Haramain%2C%20saya%20ingin%20berkonsultasi%20mengenai%20paket%20layanan%20manasik%20VR."
+                  href="https://wa.me/6281374128199?text=Assalamu%27alaikum%20Admin%20Virtual%20Haramain%2C%20saya%20ingin%20berkonsultasi%20mengenai%20paket%20layanan%20manasik%20VR."
                   target="_blank"
                   rel="noreferrer"
                   className="relative group inline-flex items-center justify-center rounded-full bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 px-8 py-4.5 text-sm font-bold text-slate-950 shadow-[0_4px_20px_rgba(212,175,55,0.3)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_8px_30px_rgba(212,175,55,0.5)] active:scale-[0.98] overflow-hidden"
@@ -606,7 +606,7 @@ export default function Home() {
             </p>
             <div className="pt-4">
               <a
-                href="https://wa.me/6281379389964?text=Assalamu%27alaikum%20Admin%20Virtual%20Haramain%2C%20saya%20ingin%20berkonsultasi%20mengenai%20paket%20layanan%20manasik%20VR."
+                href="https://wa.me/6281374128199?text=Assalamu%27alaikum%20Admin%20Virtual%20Haramain%2C%20saya%20ingin%20berkonsultasi%20mengenai%20paket%20layanan%20manasik%20VR."
                 target="_blank"
                 rel="noreferrer"
                 className="relative group inline-flex items-center justify-center rounded-full bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 px-10 py-4.5 text-base font-bold text-slate-950 shadow-[0_4px_25px_rgba(212,175,55,0.35)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_8px_35px_rgba(212,175,55,0.55)] active:scale-[0.98] overflow-hidden"
