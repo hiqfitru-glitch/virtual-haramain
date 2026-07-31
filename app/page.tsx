@@ -88,17 +88,27 @@ export default function Home() {
 
   useEffect(() => {
     const gallery = galleryRef.current;
-    if (!gallery || gallery.scrollWidth <= gallery.clientWidth) return;
+    if (!gallery) return;
 
-    const resetPoint = gallery.scrollWidth / 2;
+    if (gallery.scrollLeft === 0) {
+      gallery.scrollLeft = 1;
+    }
+
     let rafId: number;
 
     const step = () => {
-      if (gallery && !isGalleryHovered.current && !isModalOpenRef.current) {
-        gallery.scrollLeft += 0.55;
-
-        if (gallery.scrollLeft >= resetPoint) {
-          gallery.scrollLeft -= resetPoint;
+      if (gallery) {
+        const resetPoint = gallery.scrollWidth / 2;
+        if (resetPoint > 0) {
+          if (!isGalleryHovered.current && !isModalOpenRef.current) {
+            gallery.scrollLeft += 0.55;
+          }
+          // Wrap around seamlessly (supports manual left and right scrolling)
+          if (gallery.scrollLeft >= resetPoint) {
+            gallery.scrollLeft -= resetPoint;
+          } else if (gallery.scrollLeft <= 0.5) {
+            gallery.scrollLeft += resetPoint;
+          }
         }
       }
 
@@ -521,12 +531,12 @@ export default function Home() {
               onMouseLeave={() => { isGalleryHovered.current = false; }}
               onTouchStart={() => { isGalleryHovered.current = true; }}
               onTouchEnd={() => { isGalleryHovered.current = false; }}
-              className="flex gap-6 overflow-x-auto scrollbar-hide pb-6 pt-2 scroll-smooth cursor-grab active:cursor-grabbing transform-gpu will-change-transform snap-x"
+              className="flex gap-6 overflow-x-auto scrollbar-hide pb-6 pt-2 cursor-grab active:cursor-grabbing transform-gpu will-change-transform"
             >
               {duplicatedGalleryPhotos.map((item, idx) => (
                 <div 
                   key={idx}
-                  className="group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950 shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1 w-[280px] sm:w-[320px] aspect-[4/5] flex-shrink-0 cursor-pointer snap-start"
+                  className="group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950 shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1 w-[280px] sm:w-[320px] aspect-[4/5] flex-shrink-0 cursor-pointer"
                 >
                   <Image 
                     src={item.src} 

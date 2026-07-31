@@ -48,15 +48,27 @@ export default function Galeri() {
   // Carousel Row 1: Photos Scroll Loop
   useEffect(() => {
     const photoContainer = photoRef.current;
-    if (!photoContainer || photoContainer.scrollWidth <= photoContainer.clientWidth) return;
-    const resetPointPhoto = photoContainer.scrollWidth / 2;
+    if (!photoContainer) return;
+
+    if (photoContainer.scrollLeft === 0) {
+      photoContainer.scrollLeft = 1;
+    }
+
     let photoRafId: number;
 
     const stepPhoto = () => {
-      if (photoContainer && !isPhotoHovered.current && !isModalOpen.current) {
-        photoContainer.scrollLeft += 0.55;
-        if (photoContainer.scrollLeft >= resetPointPhoto) {
-          photoContainer.scrollLeft -= resetPointPhoto;
+      if (photoContainer) {
+        const resetPointPhoto = photoContainer.scrollWidth / 2;
+        if (resetPointPhoto > 0) {
+          if (!isPhotoHovered.current && !isModalOpen.current) {
+            photoContainer.scrollLeft += 0.55;
+          }
+          // Wrap around seamlessly (supports manual left and right scrolling)
+          if (photoContainer.scrollLeft >= resetPointPhoto) {
+            photoContainer.scrollLeft -= resetPointPhoto;
+          } else if (photoContainer.scrollLeft <= 0.5) {
+            photoContainer.scrollLeft += resetPointPhoto;
+          }
         }
       }
       photoRafId = requestAnimationFrame(stepPhoto);
@@ -69,15 +81,27 @@ export default function Galeri() {
   // Carousel Row 2: Videos Scroll Loop
   useEffect(() => {
     const videoContainer = videoRef.current;
-    if (!videoContainer || videoContainer.scrollWidth <= videoContainer.clientWidth) return;
-    const resetPointVideo = videoContainer.scrollWidth / 2;
+    if (!videoContainer) return;
+
+    if (videoContainer.scrollLeft === 0) {
+      videoContainer.scrollLeft = 1;
+    }
+
     let videoRafId: number;
 
     const stepVideo = () => {
-      if (videoContainer && !isVideoHovered.current && !isModalOpen.current) {
-        videoContainer.scrollLeft += 0.55;
-        if (videoContainer.scrollLeft >= resetPointVideo) {
-          videoContainer.scrollLeft -= resetPointVideo;
+      if (videoContainer) {
+        const resetPointVideo = videoContainer.scrollWidth / 2;
+        if (resetPointVideo > 0) {
+          if (!isVideoHovered.current && !isModalOpen.current) {
+            videoContainer.scrollLeft += 0.55;
+          }
+          // Wrap around seamlessly (supports manual left and right scrolling)
+          if (videoContainer.scrollLeft >= resetPointVideo) {
+            videoContainer.scrollLeft -= resetPointVideo;
+          } else if (videoContainer.scrollLeft <= 0.5) {
+            videoContainer.scrollLeft += resetPointVideo;
+          }
         }
       }
       videoRafId = requestAnimationFrame(stepVideo);
@@ -169,13 +193,13 @@ export default function Galeri() {
               onMouseLeave={() => { isPhotoHovered.current = false; }}
               onTouchStart={() => { isPhotoHovered.current = true; }}
               onTouchEnd={() => { isPhotoHovered.current = false; }}
-              className="flex gap-6 overflow-x-auto scrollbar-hide py-4 cursor-grab active:cursor-grabbing scroll-smooth transform-gpu will-change-transform snap-x"
+              className="flex gap-6 overflow-x-auto scrollbar-hide py-4 cursor-grab active:cursor-grabbing transform-gpu will-change-transform"
             >
               {duplicatedPhotos.map((item, idx) => (
                 <div
                   key={idx}
                   onClick={() => setSelectedMedia(item)}
-                  className="group relative overflow-hidden rounded-2xl border border-white/5 bg-slate-950 shadow-[0_10px_30px_rgba(0,0,0,0.4)] transition duration-500 hover:border-amber-500/30 hover:-translate-y-1.5 w-[280px] sm:w-[350px] flex-shrink-0 aspect-[4/5] cursor-pointer snap-start"
+                  className="group relative overflow-hidden rounded-2xl border border-white/5 bg-slate-950 shadow-[0_10px_30px_rgba(0,0,0,0.4)] transition duration-500 hover:border-amber-500/30 hover:-translate-y-1.5 w-[280px] sm:w-[350px] flex-shrink-0 aspect-[4/5] cursor-pointer"
                 >
                   <Image
                     src={item.src}
@@ -251,13 +275,13 @@ export default function Galeri() {
               onMouseLeave={() => { isVideoHovered.current = false; }}
               onTouchStart={() => { isVideoHovered.current = true; }}
               onTouchEnd={() => { isVideoHovered.current = false; }}
-              className="flex gap-6 overflow-x-auto scrollbar-hide py-4 cursor-grab active:cursor-grabbing scroll-smooth transform-gpu will-change-transform snap-x"
+              className="flex gap-6 overflow-x-auto scrollbar-hide py-4 cursor-grab active:cursor-grabbing transform-gpu will-change-transform"
             >
               {duplicatedVideos.map((item, idx) => (
                 <div
                   key={idx}
                   onClick={() => setSelectedMedia(item)}
-                  className="group relative overflow-hidden rounded-2xl border border-white/5 bg-slate-950 shadow-[0_15px_35px_rgba(0,0,0,0.45)] transition duration-500 hover:border-emerald-500/30 hover:-translate-y-1.5 w-[320px] sm:w-[400px] flex-shrink-0 aspect-[4/5] cursor-pointer snap-start"
+                  className="group relative overflow-hidden rounded-2xl border border-white/5 bg-slate-950 shadow-[0_15px_35px_rgba(0,0,0,0.45)] transition duration-500 hover:border-emerald-500/30 hover:-translate-y-1.5 w-[320px] sm:w-[400px] flex-shrink-0 aspect-[4/5] cursor-pointer"
                 >
                   <video
                     autoPlay
