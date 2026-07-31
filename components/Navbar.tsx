@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -22,9 +23,12 @@ export default function Navbar() {
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center">
             <div className="bg-white/90 border border-white/40 shadow-[0_0_15px_rgba(255,255,255,0.4)] px-3.5 py-1.5 rounded-xl flex items-center justify-center backdrop-blur-md transition hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.7)]">
-              <img 
+              <Image 
                 src="/images/Logo.png" 
                 alt="Virtual Haramain Logo" 
+                width={112}
+                height={32}
+                priority
                 className="h-7 sm:h-8 w-auto object-contain"
               />
             </div>
@@ -93,7 +97,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="md:hidden border-t border-emerald-500/10 bg-slate-950/95 backdrop-blur-xl animate-fade-in" id="mobile-menu">
+        <div className="md:hidden border-t border-emerald-500/10 bg-slate-950/95 backdrop-blur-md animate-fade-in" id="mobile-menu">
           <div className="space-y-1.5 px-4 py-4">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;

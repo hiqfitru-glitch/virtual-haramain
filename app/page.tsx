@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { supabase } from "@/lib/supabaseClient";
 
 const galleryPhotos = [
@@ -18,6 +19,7 @@ export default function Home() {
   const isModalOpenRef = useRef(false);
 
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [leadFormData, setLeadFormData] = useState({
     nama_lengkap: "",
     nama_instansi: "",
@@ -186,7 +188,12 @@ export default function Home() {
                   loop
                   muted
                   playsInline
-                  className="absolute inset-0 w-full h-full object-cover opacity-85 transition-all duration-700 ease-out"
+                  preload="metadata"
+                  poster="/images/background.jpeg"
+                  onLoadedData={() => setIsVideoLoaded(true)}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-out ${
+                    isVideoLoaded ? "opacity-85" : "opacity-0"
+                  }`}
                 >
                   <source src="https://media.githubusercontent.com/media/hiqfitru-glitch/virtual-haramain/main/public/images/Video-Makkah1.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
@@ -210,14 +217,17 @@ export default function Home() {
                     {/* Soft glowing/particle visual behind the headset */}
                     <div className="absolute w-28 h-28 rounded-full bg-amber-400/10 blur-xl animate-ping opacity-60" />
                     
-                    <img 
+                    <Image 
                       src="/images/vr-headset.png" 
                       alt="Floating VR Headset" 
+                      width={224}
+                      height={224}
+                      priority
                       className="w-48 h-48 sm:w-56 sm:h-56 object-contain filter drop-shadow-[0_15px_30px_rgba(212,175,55,0.35)]"
                     />
                     
                     {/* Interactive overlay tag */}
-                    <div className="absolute bottom-6 bg-slate-950/90 backdrop-blur-xl px-4 py-1.5 rounded-full border border-amber-500/30 shadow-[0_8px_25px_rgba(212,175,55,0.3)]">
+                    <div className="absolute bottom-6 bg-slate-950/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-amber-500/30 shadow-[0_8px_25px_rgba(212,175,55,0.3)]">
                       <span className="text-[10px] font-bold tracking-[0.2em] text-amber-400 uppercase flex items-center gap-1.5">
                         <span className="relative flex h-2 w-2">
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
@@ -479,17 +489,20 @@ export default function Home() {
             ref={galleryRef} 
             onMouseEnter={() => { isGalleryHovered.current = true; }}
             onMouseLeave={() => { isGalleryHovered.current = false; }}
-            className="flex gap-6 overflow-x-hidden scrollbar-hide pb-6 pt-2 scroll-smooth cursor-grab active:cursor-grabbing"
+            className="flex gap-6 overflow-x-hidden scrollbar-hide pb-6 pt-2 scroll-smooth cursor-grab active:cursor-grabbing transform-gpu will-change-transform"
           >
             {duplicatedGalleryPhotos.map((item, idx) => (
               <div 
                 key={idx}
                 className="group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950 shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1 w-[280px] sm:w-[320px] aspect-[4/5] flex-shrink-0 cursor-pointer"
               >
-                <img 
+                <Image 
                   src={item.src} 
                   alt={item.title} 
-                  className="h-full w-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-1" 
+                  fill
+                  sizes="(max-width: 640px) 280px, 320px"
+                  loading="lazy"
+                  className="object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-1" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#030f0c]/90 via-transparent to-transparent opacity-70 group-hover:opacity-85 transition-opacity duration-300 pointer-events-none" />
                 <div className="absolute bottom-4 inset-x-4 p-4 rounded-2xl glass-panel border border-white/5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out flex items-center justify-between pointer-events-none">
@@ -567,7 +580,7 @@ export default function Home() {
       {isLeadModalOpen && (
         <div 
           onClick={() => setIsLeadModalOpen(false)}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-xl transition-all duration-300 animate-fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md transition-all duration-300 animate-fade-in"
         >
           {/* Modal Container */}
           <div 

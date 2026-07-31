@@ -1,15 +1,18 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 interface MediaItem {
   type: "photo" | "video";
   src: string;
   title: string;
+  poster?: string;
 }
 
 export default function Galeri() {
   const [selectedMedia, setSelectedMedia] = useState<MediaItem | null>(null);
+  const [loadedVideos, setLoadedVideos] = useState<Record<string, boolean>>({});
 
   const photoRef = useRef<HTMLDivElement | null>(null);
   const videoRef = useRef<HTMLDivElement | null>(null);
@@ -32,11 +35,11 @@ export default function Galeri() {
   ];
 
   const videos: MediaItem[] = [
-    { type: "video", src: "/images/Video-Makkah2.mp4", title: "Ka'bah & Thawaf Simulator" },
-    { type: "video", src: "/images/Video-Makkah3.mp4", title: "Masjidil Haram Visualizer" },
-    { type: "video", src: "/images/Video-Makkah4.mp4", title: "Area Sa'i Immersive Walk" },
-    { type: "video", src: "/images/Video-Makkah5.mp4", title: "Arafah & Muzdalifah Guide" },
-    { type: "video", src: "/images/Video-Makkah6.mp4", title: "Jamarat Throwing Simulation" },
+    { type: "video", src: "/images/Video-Makkah2.mp4", title: "Ka'bah & Thawaf Simulator", poster: "/images/testi2.jpeg" },
+    { type: "video", src: "/images/Video-Makkah3.mp4", title: "Masjidil Haram Visualizer", poster: "/images/testi3.jpeg" },
+    { type: "video", src: "/images/Video-Makkah4.mp4", title: "Area Sa'i Immersive Walk", poster: "/images/testi5.jpeg" },
+    { type: "video", src: "/images/Video-Makkah5.mp4", title: "Arafah & Muzdalifah Guide", poster: "/images/testi1.jpeg" },
+    { type: "video", src: "/images/Video-Makkah6.mp4", title: "Jamarat Throwing Simulation", poster: "/images/testi4.jpeg" },
   ];
 
   const duplicatedPhotos = [...photos, ...photos];
@@ -134,7 +137,7 @@ export default function Galeri() {
             ref={photoRef}
             onMouseEnter={() => { isPhotoHovered.current = true; }}
             onMouseLeave={() => { isPhotoHovered.current = false; }}
-            className="flex gap-6 overflow-x-hidden scrollbar-hide py-4 cursor-grab active:cursor-grabbing scroll-smooth"
+            className="flex gap-6 overflow-x-hidden scrollbar-hide py-4 cursor-grab active:cursor-grabbing scroll-smooth transform-gpu will-change-transform"
           >
             {duplicatedPhotos.map((item, idx) => (
               <div
@@ -142,10 +145,13 @@ export default function Galeri() {
                 onClick={() => setSelectedMedia(item)}
                 className="group relative overflow-hidden rounded-2xl border border-white/5 bg-slate-950 shadow-[0_10px_30px_rgba(0,0,0,0.4)] transition duration-500 hover:border-amber-500/30 hover:-translate-y-1.5 w-[280px] sm:w-[350px] flex-shrink-0 aspect-[4/5] cursor-pointer"
               >
-                <img
+                <Image
                   src={item.src}
                   alt={item.title}
-                  className="h-full w-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-1"
+                  fill
+                  sizes="(max-width: 640px) 280px, 350px"
+                  loading="lazy"
+                  className="object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-1"
                 />
                 {/* Gold gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#030f0c]/90 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300 pointer-events-none" />
@@ -180,7 +186,7 @@ export default function Galeri() {
             ref={videoRef}
             onMouseEnter={() => { isVideoHovered.current = true; }}
             onMouseLeave={() => { isVideoHovered.current = false; }}
-            className="flex gap-6 overflow-x-hidden scrollbar-hide py-4 cursor-grab active:cursor-grabbing scroll-smooth"
+            className="flex gap-6 overflow-x-hidden scrollbar-hide py-4 cursor-grab active:cursor-grabbing scroll-smooth transform-gpu will-change-transform"
           >
             {duplicatedVideos.map((item, idx) => (
               <div
@@ -193,7 +199,12 @@ export default function Galeri() {
                   loop
                   muted
                   playsInline
-                  className="h-full w-full object-cover opacity-85 transition-all duration-700 ease-out group-hover:scale-105"
+                  preload="metadata"
+                  poster={item.poster}
+                  onLoadedData={() => setLoadedVideos(prev => ({ ...prev, [item.src]: true }))}
+                  className={`h-full w-full object-cover transition-opacity duration-1000 ease-out group-hover:scale-105 ${
+                    loadedVideos[item.src] ? "opacity-85" : "opacity-0"
+                  }`}
                   src={item.src}
                 />
                 {/* Emerald gradient overlay */}
@@ -225,7 +236,7 @@ export default function Galeri() {
       {selectedMedia && (
         <div 
           onClick={() => setSelectedMedia(null)}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/85 backdrop-blur-xl transition-all duration-300 animate-fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/85 backdrop-blur-md transition-all duration-300 animate-fade-in"
         >
           {/* Close button in top-right */}
           <button 
@@ -252,12 +263,16 @@ export default function Galeri() {
                 controls
                 autoPlay
                 playsInline
+                preload="metadata"
                 className="w-full max-h-[70vh] rounded-2xl object-contain shadow-lg"
               />
             ) : (
-              <img 
+              <Image 
                 src={selectedMedia.src} 
                 alt={selectedMedia.title}
+                width={1200}
+                height={800}
+                priority
                 className="w-full max-h-[70vh] rounded-2xl object-contain shadow-lg"
               />
             )}
