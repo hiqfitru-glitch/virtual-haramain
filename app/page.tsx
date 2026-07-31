@@ -188,7 +188,7 @@ export default function Home() {
                   playsInline
                   className="absolute inset-0 w-full h-full object-cover opacity-85 transition-all duration-700 ease-out"
                 >
-                  <source src="/images/Video-Makkah1.mp4" type="video/mp4" />
+                  <source src="https://media.githubusercontent.com/media/hiqfitru-glitch/virtual-haramain/main/public/images/Video-Makkah1.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 
