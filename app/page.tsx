@@ -485,32 +485,65 @@ export default function Home() {
             </h2>
           </div>
           
-          <div 
-            ref={galleryRef} 
-            onMouseEnter={() => { isGalleryHovered.current = true; }}
-            onMouseLeave={() => { isGalleryHovered.current = false; }}
-            className="flex gap-6 overflow-x-hidden scrollbar-hide pb-6 pt-2 scroll-smooth cursor-grab active:cursor-grabbing transform-gpu will-change-transform"
-          >
-            {duplicatedGalleryPhotos.map((item, idx) => (
-              <div 
-                key={idx}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950 shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1 w-[280px] sm:w-[320px] aspect-[4/5] flex-shrink-0 cursor-pointer"
-              >
-                <Image 
-                  src={item.src} 
-                  alt={item.title} 
-                  fill
-                  sizes="(max-width: 640px) 280px, 320px"
-                  loading="lazy"
-                  className="object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-1" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#030f0c]/90 via-transparent to-transparent opacity-70 group-hover:opacity-85 transition-opacity duration-300 pointer-events-none" />
-                <div className="absolute bottom-4 inset-x-4 p-4 rounded-2xl glass-panel border border-white/5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out flex items-center justify-between pointer-events-none">
-                  <span className="text-xs uppercase tracking-widest text-amber-400 font-semibold">Dokumentasi</span>
-                  <span className="text-sm text-slate-200 font-medium">{item.title}</span>
+          <div className="relative group">
+            {/* Navigation Arrows */}
+            <button
+              onClick={() => {
+                if (galleryRef.current) {
+                  galleryRef.current.scrollBy({ left: -350, behavior: "smooth" });
+                }
+              }}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-emerald-950/80 border border-emerald-500/30 text-amber-400 p-3 rounded-full hover:bg-emerald-800 transition backdrop-blur-md hidden md:flex items-center justify-center z-20 cursor-pointer shadow-lg hover:scale-105 opacity-0 group-hover:opacity-100 duration-300"
+              aria-label="Scroll left"
+            >
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+
+            <button
+              onClick={() => {
+                if (galleryRef.current) {
+                  galleryRef.current.scrollBy({ left: 350, behavior: "smooth" });
+                }
+              }}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-emerald-950/80 border border-emerald-500/30 text-amber-400 p-3 rounded-full hover:bg-emerald-800 transition backdrop-blur-md hidden md:flex items-center justify-center z-20 cursor-pointer shadow-lg hover:scale-105 opacity-0 group-hover:opacity-100 duration-300"
+              aria-label="Scroll right"
+            >
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+
+            <div 
+              ref={galleryRef} 
+              onMouseEnter={() => { isGalleryHovered.current = true; }}
+              onMouseLeave={() => { isGalleryHovered.current = false; }}
+              onTouchStart={() => { isGalleryHovered.current = true; }}
+              onTouchEnd={() => { isGalleryHovered.current = false; }}
+              className="flex gap-6 overflow-x-auto scrollbar-hide pb-6 pt-2 scroll-smooth cursor-grab active:cursor-grabbing transform-gpu will-change-transform snap-x"
+            >
+              {duplicatedGalleryPhotos.map((item, idx) => (
+                <div 
+                  key={idx}
+                  className="group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950 shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1 w-[280px] sm:w-[320px] aspect-[4/5] flex-shrink-0 cursor-pointer snap-start"
+                >
+                  <Image 
+                    src={item.src} 
+                    alt={item.title} 
+                    fill
+                    sizes="(max-width: 640px) 280px, 320px"
+                    loading="lazy"
+                    className="object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-1" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#030f0c]/90 via-transparent to-transparent opacity-70 group-hover:opacity-85 transition-opacity duration-300 pointer-events-none" />
+                  <div className="absolute bottom-4 inset-x-4 p-4 rounded-2xl glass-panel border border-white/5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out flex items-center justify-between pointer-events-none">
+                    <span className="text-xs uppercase tracking-widest text-amber-400 font-semibold">Dokumentasi</span>
+                    <span className="text-sm text-slate-200 font-medium">{item.title}</span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 

@@ -133,43 +133,76 @@ export default function Galeri() {
             <span className="text-[10px] uppercase tracking-widest text-slate-500">Auto-Scrolling</span>
           </div>
 
-          <div 
-            ref={photoRef}
-            onMouseEnter={() => { isPhotoHovered.current = true; }}
-            onMouseLeave={() => { isPhotoHovered.current = false; }}
-            className="flex gap-6 overflow-x-hidden scrollbar-hide py-4 cursor-grab active:cursor-grabbing scroll-smooth transform-gpu will-change-transform"
-          >
-            {duplicatedPhotos.map((item, idx) => (
-              <div
-                key={idx}
-                onClick={() => setSelectedMedia(item)}
-                className="group relative overflow-hidden rounded-2xl border border-white/5 bg-slate-950 shadow-[0_10px_30px_rgba(0,0,0,0.4)] transition duration-500 hover:border-amber-500/30 hover:-translate-y-1.5 w-[280px] sm:w-[350px] flex-shrink-0 aspect-[4/5] cursor-pointer"
-              >
-                <Image
-                  src={item.src}
-                  alt={item.title}
-                  fill
-                  sizes="(max-width: 640px) 280px, 350px"
-                  loading="lazy"
-                  className="object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-1"
-                />
-                {/* Gold gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#030f0c]/90 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300 pointer-events-none" />
-                
-                {/* Badge */}
-                <div className="absolute top-4 left-4 bg-amber-500/90 backdrop-blur-md px-3 py-1 rounded-full border border-amber-400/30 shadow-lg pointer-events-none">
-                  <span className="text-[8px] font-bold text-slate-950 uppercase tracking-widest">
-                    Foto
-                  </span>
-                </div>
+          <div className="relative group">
+            {/* Navigation Arrows */}
+            <button
+              onClick={() => {
+                if (photoRef.current) {
+                  photoRef.current.scrollBy({ left: -380, behavior: "smooth" });
+                }
+              }}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-emerald-950/80 border border-emerald-500/30 text-amber-400 p-3 rounded-full hover:bg-emerald-800 transition backdrop-blur-md hidden md:flex items-center justify-center z-20 cursor-pointer shadow-lg hover:scale-105 opacity-0 group-hover:opacity-100 duration-300"
+              aria-label="Scroll left"
+            >
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
 
-                {/* Caption overlay */}
-                <div className="absolute bottom-4 inset-x-4 p-4 rounded-2xl glass-panel border border-white/5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out flex items-center justify-between pointer-events-none">
-                  <span className="text-xs uppercase tracking-widest text-amber-400 font-semibold">Dokumentasi</span>
-                  <span className="text-sm text-slate-200 font-medium">{item.title}</span>
+            <button
+              onClick={() => {
+                if (photoRef.current) {
+                  photoRef.current.scrollBy({ left: 380, behavior: "smooth" });
+                }
+              }}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-emerald-950/80 border border-emerald-500/30 text-amber-400 p-3 rounded-full hover:bg-emerald-800 transition backdrop-blur-md hidden md:flex items-center justify-center z-20 cursor-pointer shadow-lg hover:scale-105 opacity-0 group-hover:opacity-100 duration-300"
+              aria-label="Scroll right"
+            >
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+
+            <div 
+              ref={photoRef}
+              onMouseEnter={() => { isPhotoHovered.current = true; }}
+              onMouseLeave={() => { isPhotoHovered.current = false; }}
+              onTouchStart={() => { isPhotoHovered.current = true; }}
+              onTouchEnd={() => { isPhotoHovered.current = false; }}
+              className="flex gap-6 overflow-x-auto scrollbar-hide py-4 cursor-grab active:cursor-grabbing scroll-smooth transform-gpu will-change-transform snap-x"
+            >
+              {duplicatedPhotos.map((item, idx) => (
+                <div
+                  key={idx}
+                  onClick={() => setSelectedMedia(item)}
+                  className="group relative overflow-hidden rounded-2xl border border-white/5 bg-slate-950 shadow-[0_10px_30px_rgba(0,0,0,0.4)] transition duration-500 hover:border-amber-500/30 hover:-translate-y-1.5 w-[280px] sm:w-[350px] flex-shrink-0 aspect-[4/5] cursor-pointer snap-start"
+                >
+                  <Image
+                    src={item.src}
+                    alt={item.title}
+                    fill
+                    sizes="(max-width: 640px) 280px, 350px"
+                    loading="lazy"
+                    className="object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:rotate-1"
+                  />
+                  {/* Gold gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#030f0c]/90 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300 pointer-events-none" />
+                  
+                  {/* Badge */}
+                  <div className="absolute top-4 left-4 bg-amber-500/90 backdrop-blur-md px-3 py-1 rounded-full border border-amber-400/30 shadow-lg pointer-events-none">
+                    <span className="text-[8px] font-bold text-slate-950 uppercase tracking-widest">
+                      Foto
+                    </span>
+                  </div>
+
+                  {/* Caption overlay */}
+                  <div className="absolute bottom-4 inset-x-4 p-4 rounded-2xl glass-panel border border-white/5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out flex items-center justify-between pointer-events-none">
+                    <span className="text-xs uppercase tracking-widest text-amber-400 font-semibold">Dokumentasi</span>
+                    <span className="text-sm text-slate-200 font-medium">{item.title}</span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
@@ -182,52 +215,85 @@ export default function Galeri() {
             <span className="text-[10px] uppercase tracking-widest text-slate-500">Auto-Scrolling</span>
           </div>
 
-          <div 
-            ref={videoRef}
-            onMouseEnter={() => { isVideoHovered.current = true; }}
-            onMouseLeave={() => { isVideoHovered.current = false; }}
-            className="flex gap-6 overflow-x-hidden scrollbar-hide py-4 cursor-grab active:cursor-grabbing scroll-smooth transform-gpu will-change-transform"
-          >
-            {duplicatedVideos.map((item, idx) => (
-              <div
-                key={idx}
-                onClick={() => setSelectedMedia(item)}
-                className="group relative overflow-hidden rounded-2xl border border-white/5 bg-slate-950 shadow-[0_15px_35px_rgba(0,0,0,0.45)] transition duration-500 hover:border-emerald-500/30 hover:-translate-y-1.5 w-[320px] sm:w-[400px] flex-shrink-0 aspect-[4/5] cursor-pointer"
-              >
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                  poster={item.poster}
-                  onLoadedData={() => setLoadedVideos(prev => ({ ...prev, [item.src]: true }))}
-                  className={`h-full w-full object-cover transition-opacity duration-1000 ease-out group-hover:scale-105 ${
-                    loadedVideos[item.src] ? "opacity-85" : "opacity-0"
-                  }`}
-                  src={item.src}
-                />
-                {/* Emerald gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#030f0c]/90 via-transparent to-transparent pointer-events-none" />
-                
-                {/* Video Badge */}
-                <div className="absolute top-4 left-4 bg-emerald-500/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-emerald-400/30 shadow-lg pointer-events-none">
-                  <span className="text-[8px] font-bold text-slate-950 uppercase tracking-widest flex items-center gap-1.5">
-                    <span className="relative flex h-1.5 w-1.5">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-950 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-slate-950"></span>
-                    </span>
-                    360° Video
-                  </span>
-                </div>
+          <div className="relative group">
+            {/* Navigation Arrows */}
+            <button
+              onClick={() => {
+                if (videoRef.current) {
+                  videoRef.current.scrollBy({ left: -430, behavior: "smooth" });
+                }
+              }}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-emerald-950/80 border border-emerald-500/30 text-amber-400 p-3 rounded-full hover:bg-emerald-800 transition backdrop-blur-md hidden md:flex items-center justify-center z-20 cursor-pointer shadow-lg hover:scale-105 opacity-0 group-hover:opacity-100 duration-300"
+              aria-label="Scroll left"
+            >
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
 
-                {/* Caption overlay */}
-                <div className="absolute bottom-4 inset-x-4 p-4 rounded-2xl glass-panel border border-white/5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out flex items-center justify-between pointer-events-none">
-                  <span className="text-xs uppercase tracking-widest text-emerald-400 font-semibold">Simulasi VR</span>
-                  <span className="text-sm text-slate-200 font-medium">{item.title}</span>
+            <button
+              onClick={() => {
+                if (videoRef.current) {
+                  videoRef.current.scrollBy({ left: 430, behavior: "smooth" });
+                }
+              }}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-emerald-950/80 border border-emerald-500/30 text-amber-400 p-3 rounded-full hover:bg-emerald-800 transition backdrop-blur-md hidden md:flex items-center justify-center z-20 cursor-pointer shadow-lg hover:scale-105 opacity-0 group-hover:opacity-100 duration-300"
+              aria-label="Scroll right"
+            >
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+
+            <div 
+              ref={videoRef}
+              onMouseEnter={() => { isVideoHovered.current = true; }}
+              onMouseLeave={() => { isVideoHovered.current = false; }}
+              onTouchStart={() => { isVideoHovered.current = true; }}
+              onTouchEnd={() => { isVideoHovered.current = false; }}
+              className="flex gap-6 overflow-x-auto scrollbar-hide py-4 cursor-grab active:cursor-grabbing scroll-smooth transform-gpu will-change-transform snap-x"
+            >
+              {duplicatedVideos.map((item, idx) => (
+                <div
+                  key={idx}
+                  onClick={() => setSelectedMedia(item)}
+                  className="group relative overflow-hidden rounded-2xl border border-white/5 bg-slate-950 shadow-[0_15px_35px_rgba(0,0,0,0.45)] transition duration-500 hover:border-emerald-500/30 hover:-translate-y-1.5 w-[320px] sm:w-[400px] flex-shrink-0 aspect-[4/5] cursor-pointer snap-start"
+                >
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    poster={item.poster}
+                    onLoadedData={() => setLoadedVideos(prev => ({ ...prev, [item.src]: true }))}
+                    className={`h-full w-full object-cover transition-opacity duration-1000 ease-out group-hover:scale-105 ${
+                      loadedVideos[item.src] ? "opacity-85" : "opacity-0"
+                    }`}
+                    src={item.src}
+                  />
+                  {/* Emerald gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#030f0c]/90 via-transparent to-transparent pointer-events-none" />
+                  
+                  {/* Video Badge */}
+                  <div className="absolute top-4 left-4 bg-emerald-500/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-emerald-400/30 shadow-lg pointer-events-none">
+                    <span className="text-[8px] font-bold text-slate-950 uppercase tracking-widest flex items-center gap-1.5">
+                      <span className="relative flex h-1.5 w-1.5">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-950 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-slate-950"></span>
+                      </span>
+                      360° Video
+                    </span>
+                  </div>
+
+                  {/* Caption overlay */}
+                  <div className="absolute bottom-4 inset-x-4 p-4 rounded-2xl glass-panel border border-white/5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out flex items-center justify-between pointer-events-none">
+                    <span className="text-xs uppercase tracking-widest text-emerald-400 font-semibold">Simulasi VR</span>
+                    <span className="text-sm text-slate-200 font-medium">{item.title}</span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
