@@ -41,7 +41,7 @@
 ---
 
 ## 4. Assets Registry
-- **Images:** `/images/Logo.png`, `/images/vr-headset.png`, `/images/testi1.jpeg` s/d `testi5.jpeg`.
+- **Images:** `/images/Logo.png`, `/images/vr-headset.png`, `/images/brosur-harga-sewa.jpg`, `/images/testi1.jpeg` s/d `testi5.jpeg`.
 - **Videos:**
   - Hero background: Menggunakan link GitHub Media CDN (`https://media.githubusercontent.com/media/hiqfitru-glitch/virtual-haramain/main/public/images/Video-Makkah1.mp4`) untuk memintas keterbatasan Git LFS 100MB di Vercel.
   - Gallery videos: `/images/Video-Makkah2.mp4` s/d `/images/Video-Makkah6.mp4` (dikeluarkan dari Git LFS tracking agar di-deploy sebagai file biner statis normal di Vercel).
